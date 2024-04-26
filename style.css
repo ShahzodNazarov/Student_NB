@@ -1,0 +1,23 @@
+.container {
+  padding: 20px;
+}
+.col-2 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.btnStyle {
+  border: none;
+  background: none;
+  color: red;
+  cursor: pointer;
+}
+.btnStyle:hover {
+  color: blue;
+}
+.btn-group {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
