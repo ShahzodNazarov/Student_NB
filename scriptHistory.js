@@ -1,12 +1,16 @@
 let localSavedArray = localStorage.getItem("savedArray");
 let savedArray = localSavedArray != null ? JSON.parse(localSavedArray) : [];
-
+let containerHistory = document.getElementById('containerHistory')
 let localStudent = localStorage.getItem("student");
 let student = localStudent != null ? JSON.parse(localStudent) : [];
 
 drawSavedArray();
 
 function drawSavedArray() {
+  let remove = document.getElementById('imgRemovedHistory');
+  if (remove != null) {
+    remove.remove()  , window.location.reload();
+  }
   let name = document.getElementById("idName");
   let sum = "";
   for (let i = 0; i < savedArray.length; i++) {
@@ -30,4 +34,9 @@ function removeSavedArray() {
   localStorage.removeItem("savedArray");
   drawSavedArray();
   window.location.reload();
+}
+if (savedArray.length==0) {
+  containerHistory.innerHTML+=`
+  <img src="./empty.jpg" alt="#" class="img-fluid" style="max-height: 80vh;width:100%" id="imgRemovedHistory">
+  `
 }

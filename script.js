@@ -1,12 +1,15 @@
 let inpFirstname = document.getElementById("inpFirstName");
 let inpLastName = document.getElementById("inpLastName");
+let container = document.getElementById('container');
 let write = document.getElementById("writableBody");
 let localStudent = localStorage.getItem("student");
 let student = localStudent != null ? JSON.parse(localStudent) : [];
 let localSavedArray = localStorage.getItem("savedArray");
 let savedArray = localSavedArray != null ? JSON.parse(localSavedArray) : [];
 
-if (student != null && student.length > 0) draw();
+
+
+if (student != null && student.length > 0) {draw(), container.removeAttribute("img")}
 function addStudent() {
   let obj = {
     firstname: inpFirstname.value,
@@ -19,11 +22,19 @@ function addStudent() {
 
     draw();
   } else {
+    console.log(
+      inpFirstname.value='',
+      inpLastName.value=''
+    );
     alert("input must be empty !!!");
   }
 }
 
 function draw() {
+  let remove = document.getElementById('imgRemoved');
+  if (remove != null) {
+    remove.remove()  , window.location.reload();
+  }
   let sum = "";
   for (let i = 0; i < student.length; i++) {
     sum += `
@@ -49,7 +60,7 @@ function draw() {
     <input type="date" class="form-control " id='data' >
     </td>
     <td>
-    <button class="btn btn-success" onclick="handleSave()" >Saqlash+</button>
+    <button class="btn btn-success" onclick="handleSave()" >Save</button>
     </td>
     </tr>
     `;
@@ -94,4 +105,10 @@ function handleSave() {
     localStorage.setItem("savedArray", JSON.stringify(savedArray));
     window.location.reload();
   } else alert("teacher and data must be empty");
+}
+
+if (student.length==0) {
+  container.innerHTML+=`
+  <img src="./empty.jpg" alt="#" class="img-fluid" style="max-height: 80vh;width:100%" id="imgRemoved">
+  `
 }

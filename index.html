@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Register</title>
   </head>
-  <body>
+  <body class="body">
     <div class="container">
       <h1 class="text-center" >
         <a href="./history.html" 
@@ -38,10 +38,10 @@
           />
         </div>
         <div class="col-2">
-          <button class="btn btn-dark" onclick="addStudent()">qo'shish</button>
+          <button class="btnPlus" onclick="addStudent()" >+</button>
         </div>
       </div>
-      <div class="row">
+      <div class="row" id="container">
 
         <table class="table table-hover table-striped" id="tableId">
           <thead>
@@ -52,8 +52,10 @@
               <th>darsda</th>
             </tr>
           </thead>
-          <tbody id="writableBody"></tbody>
+           <tbody id="writableBody">
+          </tbody>
         </table>
+        <!-- <img src="./empty.jpg" alt="#" class="img-fluid" style="max-height: 80vh;"> -->
       </div>
       <!-- container div bottom  -->
     </div>
