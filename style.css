@@ -40,6 +40,8 @@
   border: 1px dotted blue;
   border-radius: 5px;
   font-weight: bold;
+  border: none;
+  padding-bottom: 10px;
 }
 
 
