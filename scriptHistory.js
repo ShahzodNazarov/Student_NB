@@ -11,11 +11,12 @@ function drawSavedArray() {
   let sum = "";
   for (let i = 0; i < savedArray.length; i++) {
     sum += `
-            <tr class=${savedArray[i].idNum == 1 && "table-danger"}>
+            <tr class=${savedArray[i].idNum == 1 && "table-success"}>
             <td>${savedArray[i].idNum}</td>
             <td>${savedArray[i].firstname}</td>
             <td>${savedArray[i].lastname}</td>
-            <td>${savedArray[i].isChecked ? "bor" : "yo'q"}</td>
+            <td class=${savedArray[i].isChecked == false ? 'text-danger':'text-success'}>
+            ${savedArray[i].isChecked ? "bor" : "yo'q"}</td>
             <td>${savedArray[i].date}</td>
             <td>${savedArray[i].subject}</td>
             </tr>

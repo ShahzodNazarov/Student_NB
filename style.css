@@ -1,11 +1,7 @@
 .container {
   padding: 20px;
 }
-.col-2 {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-}
+
 .btnStyle {
   border: none;
   background: none;
@@ -21,3 +17,13 @@
   align-items: center;
   justify-content: center;
 }
+#historyA{
+  color: black;
+  text-decoration: none;
+}
+.isLesson{
+  color: red;
+  background-color: red;
+}
+
+

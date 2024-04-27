@@ -27,13 +27,13 @@ function draw() {
   let sum = "";
   for (let i = 0; i < student.length; i++) {
     sum += `
-        <tr>
+        <tr >
         <td>${i + 1}</td>
         <td>${student[i].firstname}</td>
-        <td>${student[i].lastname}</td>
-        <td ><input type="checkbox" onchange='handleChange(${i})'></td>
-        <td>
-        <button class='btnStyle' onclick="delet(${i})">delete</button>
+        <td  >${student[i].lastname}</td>
+        <td class="form-check form-switch">
+        <input type="checkbox" onchange='handleChange(${i})' class="form-check-input">
+        <button class='btnStyle' onclick="delet(${i})">o'chirish</button>  
         </td>
         </tr> 
         `;
@@ -41,19 +41,20 @@ function draw() {
   write.innerHTML =
     sum +
     `
-    <tr class="w-100">
-    <td colspan='3'> 
-    <input type="text" class="form-control " placeholder="enter Subject" id='subject'>
+    <tr>
+    <td colspan='2'> 
+    <input type="text" class="form-control " placeholder="Fanni kiriting" id='subject'>
     </td>
-   
     <td>
     <input type="date" class="form-control " id='data' >
     </td>
     <td>
-    <button class="btn btn-success" onclick="handleSave()" >Save</button>
+    <button class="btn btn-success" onclick="handleSave()" >Saqlash+</button>
     </td>
     </tr>
     `;
+    inpFirstname.value='';
+    inpLastName.value='';
 }
 
 function delet(i) {
